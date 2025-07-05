@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood Donation Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-image: url('bd.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+        }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff; 
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 0 12px rgba(0, 0, 50, 0.2);
+    }
+    h2, h3 {
+      color: #b22222; 
+    }
+    h3 {
+      margin-top: 25px;
+      border-bottom: 1px solid #b22222; 
+      padding-bottom: 5px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      color: #333;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 7px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 6px;
+    }
+    input[type="submit"] {
+      background: #b22222; 
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    input[type="submit"]:hover {
+      background: #7a1616; 
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Blood Donation Registration Form</h2>
+
+    <form action="/submit" method="post">
+
+      
+      <h3>Personal Information</h3>
+      <label for="firstname">First Name *</label>
+      <input type="text" id="firstname" name="firstname" required>
+
+      <label for="lastname">Last Name *</label>
+      <input type="text" id="lastname" name="lastname" required>
+
+      <label for="age">Age *</label>
+      <input type="text" id="age" name="age" required>
+
+      <label for="dob">Date of Birth *</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="gender">Gender *</label>
+      <select id="gender" name="gender" required>
+        <option value="">--Select--</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="other">Other</option>
+        <option value="prefer_not">Prefer not to say</option>
+      </select>
+
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Home Address *</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+    
+      <h3>Physical Details</h3>
+      <label for="bloodgroup">Blood Group / Type</label>
+      <select id="bloodgroup" name="bloodgroup">
+        <option value="">--Select--</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+
+      <label for="weight">Weight (kg) *</label>
+      <input type="number" id="weight" name="weight" min="30" required>
+
+      <label for="height">Height (cm)</label>
+      <input type="number" id="height" name="height" min="100">
+
+     
+      <h3>Medical History</h3>
+      <label for="medical_conditions">Any existing medical conditions?</label>
+      <textarea id="medical_conditions" name="medical_conditions" rows="3" placeholder="Please specify"></textarea>
+
+      <label for="medication">Are you currently on any medication?</label>
+      <select id="medication" name="medication">
+        <option value="">--Select--</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="donated_before">Have you donated blood before?</label>
+      <select id="donated_before" name="donated_before">
+        <option value="">--Select--</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="last_donation_date">Date of Last Blood Donation</label>
+      <input type="date" id="last_donation_date" name="last_donation_date">
+
+      <label for="recent_surgery_vaccine">Any recent surgeries or vaccinations?</label>
+      <textarea id="recent_surgery_vaccine" name="recent_surgery_vaccine" rows="3"></textarea>
+
+      <label for="allergies">Do you have any allergies?</label>
+      <textarea id="allergies" name="allergies" rows="3"></textarea>
+
+      <label for="feeling_well">Do you currently feel well and healthy? *</label>
+      <select id="feeling_well" name="feeling_well" required>
+        <option value="">--Select--</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="recent_travel">Have you traveled internationally recently?</label>
+      <select id="recent_travel" name="recent_travel">
+        <option value="">--Select--</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+
+      <label for="smoking_alcohol">Do you smoke or consume alcohol?</label>
+      <select id="smoking_alcohol" name="smoking_alcohol">
+        <option value="">--Select--</option>
+        <option value="smoke">Smoke</option>
+        <option value="alcohol">Alcohol</option>
+        <option value="both">Both</option>
+        <option value="none">None</option>
+      </select>
+
+     
+      <h3>Emergency Contact</h3>
+      <label for="emergency_name">Emergency Contact Name *</label>
+      <input type="text" id="emergency_name" name="emergency_name" required>
+
+      <label for="emergency_phone">Emergency Contact Phone *</label>
+      <input type="tel" id="emergency_phone" name="emergency_phone" required>
+
+      
+      <h3>Consent</h3>
+      <label>
+        <input type="checkbox" name="consent" required> I consent to donate blood and agree to the privacy policy *
+      </label>
+
+      <input type="submit" value="Register">
+
+    </form>
+  </div>
+
+</body>
+</html>
